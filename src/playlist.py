@@ -8,8 +8,8 @@ from src.channel import Channel
 class PlayList(Channel):
     def __init__(self, playlist_id):
         self.playlist_id = playlist_id
-        self.title = self.get_service().playlists().list(id=playlist_id, part='snippet,contentDetails', maxResults=50).execute().get('items')[
-            0].get('snippet').get('title')
+        self.title = self.get_service().playlists().list(id=playlist_id, part='snippet,contentDetails', maxResults=50
+                                                         ).execute().get('items')[0].get('snippet').get('title')
 
         # self.title
         self.url = 'https://www.youtube.com/playlist?list=' + self.playlist_id
